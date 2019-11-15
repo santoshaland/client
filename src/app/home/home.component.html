@@ -1,0 +1,24 @@
+
+<button (click)="GoToReigster()" type="button" class="btn btn-primary">Add New Record</button>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>No</th><th>Name</th><th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{emp.no}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.address}}</td>
+        <td><button routerLink="/update/{{emp.no}}" type="button" class="btn btn-primary">Edit</button></td>
+        <td>
+          <button type="button" (click)="Delete(emp.no)" class="btn btn-warning">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>

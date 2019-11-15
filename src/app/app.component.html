@@ -1,0 +1,37 @@
+
+<nav
+class="navbar navbar-default navbar-fixed-top"
+role="navigation">
+
+<ul class="nav navbar-nav">
+
+  <li class="active">
+    <a routerLink="/home">Home</a>
+  </li>
+
+  <li class="active">
+      <a routerLink="/about">About us</a>
+    </li>
+
+  <li class="active">
+      <a routerLink="/contact">Contact us</a>
+    </li>
+    <li *ngIf= "!service.isLoggedin()"  >
+        <a routerLink="/login">Login Here</a>
+        
+       </li>
+
+    <li *ngIf= "service.isLoggedin()"  >
+     
+     <button  (click)="Logout()" type="button" class="btn btn-primary">Logout</button>
+     
+    </li>
+</ul>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<router-outlet></router-outlet>
